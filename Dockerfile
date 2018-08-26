@@ -10,8 +10,9 @@ RUN apt-get update && apt-get upgrade -y && \
 #EXPOSE 80
 #Making Apache2 Server run in foreground
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-ADD /home/ubuntu/jenkins/workspace/workspace/git-build/demo1 /var/www/html/
 RUN rm var/www/html/index.html
+ADD demo1 /var/www/html/
+
 
 #FROM hshar/new:1.0
 #ADD demo1 /var/www/html/
